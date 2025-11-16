@@ -6,13 +6,13 @@ class Article:
         self._magazine = None
         self._title = None
 
-        self.author = author      # use setter
-        self.magazine = magazine  # use setter
-        self._set_title(title)    # private initializer to bypass immutability
+        self.author = author      
+        self.magazine = magazine  
+        self._set_title(title)    
 
         Article.all.append(self)
 
-    # PRIVATE method: used only inside __init__ to set title ONCE.
+    
     def _set_title(self, value):
         if isinstance(value, str) and 5 <= len(value) <= 50:
             self._title = value
@@ -23,8 +23,7 @@ class Article:
 
     @title.setter
     def title(self, value):
-        # Title should not change after initialization (immutable)
-        # Ignore all future attempts to change it.
+       
         pass
 
     @property
@@ -57,7 +56,7 @@ class Author:
 
     @name.setter
     def name(self, value):
-        # name is immutable → ignore changes
+        
         pass
 
     def articles(self):
